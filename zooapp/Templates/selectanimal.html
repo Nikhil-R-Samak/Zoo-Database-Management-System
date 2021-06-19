@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title >ANIMAL DATA</title>
+</head>
+<body>
+
+<h3> ANIMAL DATA</h3>
+<table border="4">
+<th>animal_id</th>
+<th>animal_name</th>
+<th>gender</th>
+<th>birthdate</th>
+<th>origin</th>
+<th>category</th>
+<th>cageno</th>
+<th>speciesname</th>
+
+{% for d in data %}
+<tr>
+    <td>{{d.animal_id}}</td>
+    <td>{{d.animal_name}}</td>
+    <td>{{d.gender}}</td>
+    <td>{{d.birth_date}}</td>
+    <td>{{d.origin}}</td>
+    <td>{{d.category}}</td>
+    <td>{{d.cageno}}</td>
+    <td>{{d.speciesname_id}}</td>
+
+</tr>
+{% endfor %}
+</table>       

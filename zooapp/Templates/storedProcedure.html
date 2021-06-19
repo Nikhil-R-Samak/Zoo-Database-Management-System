@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title >Querying</title>
+</head>
+<body>
+<p><b>Content in Animals:</b></p>
+<table border="4">
+<th>animal_id</th>
+<th>animal_name</th>
+<th>gender</th>
+<th>birthdate</th>
+<th>origin</th>
+<th>category</th>
+<th>cageno</th>
+<th>speciesname</th>
+
+{% for a in animalDetails %}
+<tr>
+  <td>{{a.animal_id}}</td>
+  <td>{{a.animal_name}}</td>
+  <td>{{a.gender}}</td>
+  <td>{{a.birth_date}}</td>
+  <td>{{a.origin}}</td>
+  <td>{{a.category}}</td>
+  <td>{{a.cageno}}</td>
+  <td>{{a.speciesname_id}}</td>
+
+</tr>
+{% endfor %}
+</table>     

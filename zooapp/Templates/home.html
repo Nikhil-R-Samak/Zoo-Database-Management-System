@@ -1,0 +1,104 @@
+
+<!DOCTYPE HTML>
+<HTML lang="en">
+<head>
+ {% load static %}
+
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no"> 
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static '/bootstrap/bootstrap.min.css' %}">
+    <script src="{% static '/bootstrap/jquery.min.js' %}"></script>
+    <script src="{% static '/bootstrap/popper.min.js' %}"></script>
+    <script src="{% static '/bootstrap/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+
+
+<script type="text/javascript">
+    function goToNewPage()
+    {
+        var url = document.getElementById('list').value;
+        if(url != 'none') {
+            window.location = url;
+        }
+    }
+</script>
+
+</head>
+    <title>Zoo Database System</title>
+<body>
+    <div id ="navigation">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div id="heading">
+                <h4 class ="text-white">ZOO Database System</h4>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+                       
+            <div id="nav">
+                <div id="navlinks">
+                    {% if user.is_authenticated %}
+                    <a target="_blank" href="{% url 'StaffData' %}"><h6>Staff</h6></a>
+                    <a target="_blank" href="{% url 'TicketData' %}"><h6>Tickets</h6></a>
+                    <a target="_blank" href="{% url 'VisitorData' %}"><h6>Visitors</h6></a>
+                    <a target="_blank" href="{% url 'AnimalData' %}"><h6>Animal</h6></a>
+                    <a target="_blank" href="{% url 'SpeciesData' %}"><h6>Species</h6></a>
+                    <a target="_blank" href="{% url 'LooksAfterData' %}"><h6>LooksAfter</h6></a>
+                    <select id="list">
+                        <option value='none' selected>Choose a Query</option>
+                        <option value="{% url 'query1' %}"><h6>query1</h6></a></option>
+                        <option value="{% url 'query2' %}"><h6>query2</h6></a></option>
+                        <option value="{% url 'deletealldata' %}"><h6>deletedata</h6></option>
+                        <option value="{% url 'storedProcedure' %}"><h6>storedProcedure</h6></option>
+                    </select>
+                    <input type=button value="Go" onclick="goToNewPage()"/> 
+                    {% else %}
+                    <!--<a href="{% url 'Indexa' %}">
+                    <a href="{% url 'login' %}"><h6>Admin Login</h6></a>-->
+                    {% endif %} 
+
+                    {% if user.is_authenticated %}
+                    <h6>HELLO ,{{user.first_name}}</h6>
+                    <a href="{% url 'logout' %}"><h6>Admin Logout</h6></a>
+                    {% else %}
+
+                    <!--<a href="{% url 'register' %}"><h6>Admin Registration</h6></a>
+                    <a href="{% url 'login' %}"><h6>Admin Login</h6></a>-->
+                    {% endif %}
+                </div>
+            </div> 
+        </nav>    
+        
+</div>   
+        <div class="content">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div id="navlinks">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a target="_blank" class="nav-link active" href="{% url 'selectstaff' %}">Staff Data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a  target="_blank" class="nav-link" href="{% url 'selectticket' %}">Ticket Data</a>
+                            </li>
+                             <li class="nav-item">
+                                <a target="_blank" class="nav-link" href="{% url 'selectvisitor' %}">Visitor Data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a target="_blank" class="nav-link" href="{% url 'selectspecies' %}">Species Data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a target="_blank" class="nav-link" href="{% url 'selectanimal' %}">Animal Data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a target="_blank" class="nav-link" href="{% url 'selectlooksafter' %}">LooksAfter Data</a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+            </nav>  
+        </div>    
+</body>
+</html>
+</body>

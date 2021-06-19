@@ -1,0 +1,141 @@
+body:before {
+	content: '';
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../Images/image5.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+
+}
+ 
+nav{
+    background-attachment: fixed;
+    padding-right: 0%;
+
+    z-index: 20;
+}
+
+
+#nav a {
+	text-decoration: none;
+	font-family: Cambria, serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: normal;
+	letter-spacing: normal;
+	line-height: 1.3em;
+	color: #596365;
+}
+
+ 
+input {
+    width: 100px;
+    height: 25px;
+   }
+   
+label{
+    display: inline-block;
+    width: 250px;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+}
+
+
+label, input, button {
+    font-size: inherit;
+    padding: 0.2em;
+    margin: 0.1em 0.2em;
+    -moz-box-sizing: content-box; 
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    z-index:10;
+}
+
+.forms {
+	position: absolute;
+	top: 40%;
+    left: 45%;
+    right:50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+    height: 550px;
+    margin:100px;
+	padding: 80px 40px;
+	background: rgba(0, 0, 0, 0.5);
+}
+.avatar {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	top: calc(-80px/2);
+	left: 190px;
+}
+
+.forms input[type=text], .forms input[type=date], .forms input[type=number] {
+	border: none;
+	border-bottom: 2px solid #fff;
+	background: transparent;
+    outline: none;
+    width:200px;
+	height: 30px;
+	color: #fff;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+::placeholder { 
+    color:white;
+    opacity: 1; 
+  }
+  
+
+div.h3{
+    padding: 20px;
+    color: white;
+    width:50px;
+    background-attachment: fixed;
+}
+
+
+
+#images {
+    position:relative;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+#images img{
+    display:none;
+    position:absolute;
+    width: 100%;
+    height: auto;
+    top:0;
+    left:0;
+    background-attachment: fixed;
+}    
+
+#images img.active{
+    display:block;
+  }
+
+img#images {
+    z-index: -1;
+ }

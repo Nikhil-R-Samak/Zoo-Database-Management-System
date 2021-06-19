@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+ {% load static %}
+
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static '/bootstrap/bootstrap.min.css' %}">
+    <script src="{% static '/bootstrap/jquery.min.js' %}"></script>
+    <script src="{% static '/bootstrap/popper.min.js' %}"></script>
+    <script src="{% static '/bootstrap/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animal.css' %}">
+
+<title>Animals input Form</title>
+</head>
+<body>
+    <div id ="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div id="heading">
+            <h3 class ="text-white">Animal Data Input</h3>
+        </div>  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav> 
+        <div class="forms">
+
+              
+        <form action="/datasaving/" method="post">
+            {% csrf_token %}
+            <fieldset>
+            <div class="form-group">
+                <label>Animal id</label><input type="text" name="animid" size="30" autofocus placeholder="Enter the animal id" required><br/>
+            </div>    
+            <div class="form-group">
+                <label>Animal name</label><input type="text" name="animname" size="30" autofocus placeholder="Enter the animal name"required><br/>
+            </div>
+            <div class="form-group">
+                <label>Animal Gender</label><input type="text" name="animgend" size="30" placeholder="Enter the Gender"required><br/>
+            </div>
+            <div class="form-group">
+                <label>Animal Species</label><input type="text" name="animspecies" size="30" placeholder="Enter the Species"required><br/>
+            <div class="form-group">
+                <label>Animal DoB</label><input type="date" name="animbirth" size="30" placeholder="DoB"required><br/>
+            </div>
+            <div class="form-group">
+                <label>Animal Origin</label><input type="text" name="animorigin" size="30" placeholder="Animal Origin "required><br/>
+            </div>
+            <div class="form-group">   
+                <label>Animal Category</label><input type="text" name="animcateg" size="30" placeholder="Animal Categ"required><br/>
+            </div>
+            <div class="form-group">
+                <label>Animal CageNo</label><input type="number" name="animcage" size="30" placeholder="Animal Cageno"required><br/>
+            </div>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </fieldset>
+        
+        </div>
+    </div>       
+</div>
+    </form>
+</body>    
